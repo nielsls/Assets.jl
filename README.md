@@ -1,5 +1,7 @@
 # Assets
 
+Install: `] add Assets`
+
 Assets allows you to easily retrieve the path of an asset (txt-file, image, etc...) bundled with your Julia package.
 
 ```
@@ -10,8 +12,9 @@ The above works both for ordinary Julia sessions - and for Julia apps compiled a
 
 ## When using PackageCompiler
 
-When compiling apps using PackageCompiler, the following code should be appended to the build script (i.e. right after `create_app(...)`):
+When compiling apps using [PackageCompiler](https://github.com/JuliaLang/PackageCompiler.jl), the following code should be appended to your build script (i.e. right after `create_app(...)`):
 ```
+using Assets
 using MyPkgWithAssets
 copy_assets(MyPkgWithAssets, app_folder)
 ```
